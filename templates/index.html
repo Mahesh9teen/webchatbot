@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-image: url("{{ url_for('static', filename='BGimg.avif') }}");
+        /* background-color: blue; */
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .giff{
+    background-image: url("{{ url_for('static', filename='GIF.gif') }}");
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    border-radius: 50%;
+}
+
+    .textbox {
+        background-color: rgba(155, 155, 155, 0.356);
+        height: 100px;
+        width: 60%;
+        border-radius: 30px;
+        border: none;
+    }
+
+    .btt:hover {
+        background-color:white;
+        color:  rgb(160, 194, 192);
+    }
+
+    .box {
+        text-align: center;
+        position: relative;
+    }
+   /* Optional: Style the loading GIF */
+   #loadingGif {
+        display: none;
+        border-radius: 50%;
+    }
+    .out{
+       width: 60%;
+       height: 400px;
+       background-color: rgba(160, 194, 192, 0.288);
+      border-radius: 20px;
+      padding: 20px;
+      font-size: 15px;
+    }
+</style>
+
+
+<body>
+    <div class="box">
+        <form action="" method="post">
+            <label for=""
+                style="position: relative; margin-top: 100px; margin-bottom: 30px;font-size: 24px; margin-left: -650px;">What
+                you need ?</label><br>
+            <input type="text" name="spy" class="textbox"><br>
+            <input type="submit" class="btt" id="demo" value="Submit"
+            style="font-size: 17px; font-weight: 600; margin-bottom: 60px; margin-left: 600px; margin-top: 10px; height: 30px; width: 100px; border-radius: 5px;">
+            <!-- <img id="loadingGif" src="GIF.gif" alt="Loading..." width="100" height="100"> -->
+            <center><div id="loadingGif">
+                <div class="giff" ></div>
+                <div>Loading.....</div>
+            </div></center>
+            <center></center>
+        </form>
+       <center> <p class="out">{{mmm}}</p></center>
+    </div>
+   
+</body>
+<script>
+    // Function to handle the button click event
+    document.getElementById('demo').addEventListener('click', function() {
+        // Show the loading GIF
+        document.getElementById('loadingGif').style.display = 'inline-block';
+
+        // You can perform other actions here (e.g., form submission, data processing)
+
+        // For demonstration purposes, simulate a loading delay
+        setTimeout(function() {
+            // Hide the loading GIF after the loading is complete (replace with actual actions)
+            document.getElementById('loadingGif').style.display = 'none';
+        }, 4000); // Simulated loading delay of 2 seconds
+    });
+</script>
+
+</html>
